@@ -33,12 +33,12 @@ class CamaroteInferior extends Ingresso {
     }
 
     void setLocalizacao(int localizacao) {
-        while (this.localizacao[contador] ){
-            this.localizacao[contador] = localizacao;
-            contador++;
+        this.localizacao[contador] = localizacao;
+        contador++;
+
         }
     }
-}
+
 
 public class Nivelamento {
 
