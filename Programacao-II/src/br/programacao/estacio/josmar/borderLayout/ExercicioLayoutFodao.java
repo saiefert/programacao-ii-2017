@@ -1,16 +1,18 @@
 package br.programacao.estacio.josmar.borderLayout;
 
+import com.sun.deploy.panel.JavaPanel;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class ExercicioLayoutFodao extends JFrame {
     
     private BorderLayout borderLayoutFodao;
+
+    private JPanel claudir;
     
       
     private FlowLayout flowLayoutNorte;
@@ -76,6 +78,8 @@ public class ExercicioLayoutFodao extends JFrame {
         fodaoSul.add(borderDois, BorderLayout.SOUTH);
         fodaoOeste.add(borderTres, BorderLayout.EAST);
         fodaoLeste.add(borderQuatro, BorderLayout.WEST);
+
+
            
         
     }

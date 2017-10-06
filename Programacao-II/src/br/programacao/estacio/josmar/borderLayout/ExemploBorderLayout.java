@@ -14,6 +14,7 @@ public class ExemploBorderLayout extends JFrame {
         private JButton botaoCentro;
         
         ExemploBorderLayout(){
+
             botaoSul = new JButton("Botão Sul");
             botaoNorte = new JButton("Botão Norte");
             botaoLeste = new JButton("Botão Leste");

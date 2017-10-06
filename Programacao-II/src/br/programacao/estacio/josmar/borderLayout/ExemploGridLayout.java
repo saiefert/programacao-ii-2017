@@ -25,7 +25,7 @@ public class ExemploGridLayout extends JFrame {
         five = new JButton("Cinco");
         six = new JButton("Seis");
         layout1 = new GridLayout(2,2,5,5);
-        layout = new BorderLayout();
+
         
         
         this.setLayout(layout1);
