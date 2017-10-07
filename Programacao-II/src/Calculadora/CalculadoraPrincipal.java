@@ -8,7 +8,9 @@ public class CalculadoraPrincipal {
         Design design = new Design();
 
         design.setVisible(true);
-        design.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        design.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        design.setResizable(false);
+        design.setLocationRelativeTo(null);
 
     }
 }
