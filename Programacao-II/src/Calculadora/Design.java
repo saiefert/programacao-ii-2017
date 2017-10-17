@@ -234,20 +234,20 @@ public class Design extends JFrame implements ActionListener {
 
             //se a operação chamada for igual a alguma das correspondentes, coloca no label o texto correspondente
             if (operacao == 1) {
-                visor.setText(String.valueOf(op.getSoma()));
+                visor.setText(String.valueOf(String.format("%.2f",op.getSoma()).replaceAll(",",".")));
             } else if (operacao == 2) {
-                visor.setText(String.valueOf(op.getSubtracao()));
+                visor.setText(String.valueOf(String.format("%.2f",op.getSubtracao()).replaceAll(",",".")));
             } else if (operacao == 3) {
-                visor.setText(String.valueOf(op.getMultiplicacao()));
+                visor.setText(String.valueOf(String.format("%.2f", op.getMultiplicacao()).replaceAll(",",".")));
             } else if (operacao == 4) {
                 if (num2 == 0) {
                     visor.setText("Indivisível por zero");
                 } else {
-                    visor.setText(String.valueOf(op.getDivisao()));
+                    visor.setText(String.valueOf(String.format("%.2f", op.getDivisao()).replaceAll(",",".")));
                 }
             } else if (operacao == 5) {
                 op.raizQuadrada();
-                visor.setText(String.valueOf(op.raiz));
+                visor.setText(String.valueOf(String.format("%.2f",op.raiz)).replaceAll(",","."));
             }
         }
     }
