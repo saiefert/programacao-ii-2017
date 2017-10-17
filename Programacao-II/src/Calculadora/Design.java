@@ -17,6 +17,10 @@ public class Design extends JFrame implements ActionListener {
     private JButton botAdicao, botSubtracao, botDivisao, botMultiplicacao, botResultado, botVirgula, botRaiz, botReset;
     private JLabel visor;
 
+    double num1 = 0;
+    double num2 = 0;
+    static int caso = 0;
+
     GridBagConstraints gbc = new GridBagConstraints();
 
     Design() {
@@ -177,7 +181,6 @@ public class Design extends JFrame implements ActionListener {
 
         if (evento.getSource() == botUm) {
             visor.setText(visor.getText() + "1");
-            op.setNum1(1);
         } else if (evento.getSource() == botDois) {
             visor.setText(visor.getText() + "2");
         } else if (evento.getSource() == botTres) {
@@ -196,23 +199,26 @@ public class Design extends JFrame implements ActionListener {
             visor.setText(visor.getText() + "9");
         } else if (evento.getSource() == botZero) {
             visor.setText(visor.getText() + "0");
-        } else if (evento.getSource() == botSubtracao) {
-            visor.setText(visor.getText() + "-");
-        } else if (evento.getSource() == botDivisao) {
-            visor.setText(visor.getText() + "/");
-        } else if (evento.getSource() == botMultiplicacao) {
-            visor.setText(visor.getText() + "*");
-        } else if (evento.getSource() == botAdicao) {
-            visor.setText(visor.getText() + "+");
-            op.setNum1(Double.parseDouble(visor.getText()));
-        } else if (evento.getSource() == botVirgula) {
-            visor.setText(visor.getText() + ",");
-        } else if (evento.getSource() == botResultado) {
-
         } else if (evento.getSource() == botReset) {
             visor.setText("");
+
+        } else if (evento.getSource() == botAdicao) {
+            num1 = Double.parseDouble(visor.getText());
+            op.setNum1(num1);
+            caso = 1;
+            visor.setText("");
+
         }
-        Double valor = Double.parseDouble(visor.getText());
-        double num1 = valor;
+        if (evento.getSource() == botResultado) {
+            num2 = Double.parseDouble(visor.getText());
+            op.setNum2(num2);
+
+            switch (caso) {
+                case 1: op.getSoma();
+                    break;
+
+            }visor.setText(String.valueOf(op.getSoma()));
+
+        }
     }
 }
