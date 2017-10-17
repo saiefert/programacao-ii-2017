@@ -3,7 +3,7 @@ package Calculadora;
 public class Operacoes {
 
     public static double raiz;
-    private static double soma;
+    private double soma;
     private static double multiplicacao;
     private static double divisao;
     private static double subtracao;

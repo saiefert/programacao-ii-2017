@@ -15,7 +15,7 @@ public class Design extends JFrame implements ActionListener {
 
     private JButton botUm, botDois, botTres, botQuatro, botCinco, botSeis, botSete, botOito, botNove, botZero;
     private JButton botAdicao, botSubtracao, botDivisao, botMultiplicacao, botResultado, botVirgula, botRaiz, botReset;
-    private JLabel visor;
+    private JLabel visor, visorMenor;
 
     double num1 = 0;
     double num2 = 0;
@@ -36,9 +36,19 @@ public class Design extends JFrame implements ActionListener {
 
         //visor calculadora
         this.add(painelVisor, BorderLayout.NORTH);
+        visorMenor = new JLabel("", SwingConstants.RIGHT);
+        visorMenor.setMinimumSize(new Dimension(200, 20));
+        visorMenor.setPreferredSize(new Dimension(230, 20));
+        visorMenor.setMaximumSize(new Dimension(100, 20));
+        visorMenor.setFont(new Font("Times", Font.BOLD, 12));
+        visorMenor.setForeground(Color.black);
+        visorMenor.setOpaque(true);
+        visorMenor.setBackground(Color.gray);
+
+
         visor = new JLabel("", SwingConstants.CENTER);
         visor.setMinimumSize(new Dimension(200, 100));
-        visor.setPreferredSize(new Dimension(230, 75));
+        visor.setPreferredSize(new Dimension(230, 100));
         visor.setMaximumSize(new Dimension(100, 150));
         painelVisor.setLayout(fluxo);
         visor.setFont(new Font("Times", Font.PLAIN, 25));
@@ -74,7 +84,9 @@ public class Design extends JFrame implements ActionListener {
 
         //Componentes
         //visor
+        painelVisor.add(visorMenor);
         painelVisor.add(visor);
+
 
         //Botões com GridBagLayout
         gbc.gridx = 0;
@@ -180,57 +192,77 @@ public class Design extends JFrame implements ActionListener {
 
         if (evento.getSource() == botUm) {
             visor.setText(visor.getText().concat("1"));
+            visorMenor.setText(visorMenor.getText().concat("1"));
         } else if (evento.getSource() == botDois) {
             visor.setText(visor.getText().concat("2"));
+            visorMenor.setText(visorMenor.getText().concat("2"));
         } else if (evento.getSource() == botTres) {
             visor.setText(visor.getText().concat("3"));
+            visorMenor.setText(visorMenor.getText().concat("3"));
         } else if (evento.getSource() == botQuatro) {
             visor.setText(visor.getText().concat("4"));
+            visorMenor.setText(visorMenor.getText().concat("4"));
         } else if (evento.getSource() == botCinco) {
             visor.setText(visor.getText().concat("5"));
+            visorMenor.setText(visorMenor.getText().concat("5"));
         } else if (evento.getSource() == botSeis) {
             visor.setText(visor.getText().concat("6"));
+            visorMenor.setText(visorMenor.getText().concat("6"));
         } else if (evento.getSource() == botSete) {
             visor.setText(visor.getText().concat("7"));
+            visorMenor.setText(visorMenor.getText().concat("7"));
         } else if (evento.getSource() == botOito) {
             visor.setText(visor.getText().concat("8"));
+            visorMenor.setText(visorMenor.getText().concat("8"));
         } else if (evento.getSource() == botNove) {
             visor.setText(visor.getText().concat("9"));
+            visorMenor.setText(visorMenor.getText().concat("9"));
         } else if (evento.getSource() == botZero) {
             visor.setText(visor.getText().concat("0"));
+            visorMenor.setText(visorMenor.getText().concat("0"));
         } else if (evento.getSource() == botVirgula) {
             visor.setText(visor.getText().concat("."));
+            visorMenor.setText(visorMenor.getText().concat("."));
         } else if (evento.getSource() == botReset) {
             visor.setText("");
+            visorMenor.setText("");
+
+        //operadores
         } else if (evento.getSource() == botAdicao) {
             num1 = Double.parseDouble(visor.getText());
             op.setNum1(num1);
             operacao = 1;
             visor.setText("");
+            visorMenor.setText(visorMenor.getText().concat("+"));
         } else if (evento.getSource() == botSubtracao) {
             num1 = Double.parseDouble(visor.getText());
             op.setNum1(num1);
             operacao = 2;
             visor.setText("");
+            visorMenor.setText(visorMenor.getText().concat("-"));
         } else if (evento.getSource() == botMultiplicacao) {
             num1 = Double.parseDouble(visor.getText());
             op.setNum1(num1);
             operacao = 3;
             visor.setText("");
+            visorMenor.setText(visorMenor.getText().concat("*"));
         } else if (evento.getSource() == botDivisao) {
             num1 = Double.parseDouble(visor.getText());
             op.setNum1(num1);
             operacao = 4;
             visor.setText("");
+            visorMenor.setText(visorMenor.getText().concat("/"));
         } else if (evento.getSource() == botRaiz) {
             num1 = Double.parseDouble(visor.getText());
             op.setNum1(num1);
             operacao = 5;
+            visorMenor.setText(visorMenor.getText().concat("√"));
         }
         //caso o resultado passado acima corresponda a algum dos casos abaixo, chama método correspondente da operação
         if (evento.getSource() == botResultado) {
             num2 = Double.parseDouble(visor.getText());
             op.setNum2(num2);
+            visorMenor.setText(" ");
 
             //se a operação chamada for igual a alguma das correspondentes, coloca no label o texto correspondente
             if (operacao == 1) {
