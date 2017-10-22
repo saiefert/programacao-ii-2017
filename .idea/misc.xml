@@ -3,8 +3,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/../Banco/pom.xml" />
-        <option value="$PROJECT_DIR$/BancoComJava/src/BDJava/pom.xml" />
+        <option value="$PROJECT_DIR$/bancodedados/pom.xml" />
       </list>
     </option>
   </component>

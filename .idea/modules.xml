@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BancoComJava/src/BDJava/BDJava.iml" filepath="$PROJECT_DIR$/BancoComJava/src/BDJava/BDJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListaDeExerciciosProgramacaoII/ListaDeExerciciosProgramacaoII.iml" filepath="$PROJECT_DIR$/ListaDeExerciciosProgramacaoII/ListaDeExerciciosProgramacaoII.iml" />
       <module fileurl="file://$PROJECT_DIR$/Programacao-II/Programacao-II.iml" filepath="$PROJECT_DIR$/Programacao-II/Programacao-II.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bancodedados/ProgramacaoII-BancoDeDados.iml" filepath="$PROJECT_DIR$/bancodedados/ProgramacaoII-BancoDeDados.iml" />
     </modules>
   </component>
 </project>

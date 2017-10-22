@@ -6,14 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Banco" />
-        <module name="BDJava" />
+        <module name="BancoDeDados" />
+        <module name="ProgramacaoII-BancoDeDados" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Banco" target="1.5" />
-      <module name="BDJava" target="1.5" />
-      <module name="ProgramacaoIIBancodeDados" target="1.5" />
+      <module name="BancoDeDados" target="1.5" />
+      <module name="ProgramacaoII-BancoDeDados" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
