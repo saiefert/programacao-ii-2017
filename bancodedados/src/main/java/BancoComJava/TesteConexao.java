@@ -1,5 +1,4 @@
 package BancoComJava;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,19 +10,22 @@ import java.util.logging.Logger;
 public class TesteConexao {
 
     public static void main(String[] args) {
-
         final String URL = "jdbc:postgresql://localhost:5432/progii_bd";
         final String USUARIO = "postgres";
         final String SENHA = "toor";
+
         Connection conexao;
 
         System.out.println("Conectando ao banco de dados........\n");
         System.out.println("================================");
         System.out.println("Escolha uma das opções: \n1:Inserir um usuário \n2:Inserir um Perfil \n3:Inserir um endereço \n4:Sair");
         System.out.println("================================");
+
         int opcao = 0;
+
         Scanner sc = new Scanner(System.in);
         Usuario usuario = new Usuario();
+        DaoUsuario user = new DaoUsuario();
 
         while (opcao != 4) {
             System.out.print("\nEscolha uma opção: ");
@@ -36,18 +38,8 @@ public class TesteConexao {
                     usuario.setNome(sc.next());
                     System.out.print("Sobrenome: ");
                     usuario.setSobrenome(sc.next());
-                    try {
-                        conexao = DriverManager.getConnection(URL, USUARIO, SENHA);
-                        String sql = "INSERT INTO tb_usuario(nome, sobrenome) VALUES('" + usuario.getNome() + " ',' " + usuario.getSobrenome() + "')";
-                        Statement sttm = conexao.createStatement();
+                    user.salvarUsuario(usuario);
 
-                        sttm.executeUpdate(sql);
-                        System.out.println(usuario.getNome() + " inserido com sucesso!");
-                        conexao.close();
-
-                    } catch (SQLException ex) {
-                        Logger.getLogger(TesteConexao.class.getName()).log(Level.SEVERE, null, ex);
-                    }
                     break;
                 case 2:
                     System.out.println("Insira o perfil");
